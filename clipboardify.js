@@ -28,7 +28,7 @@ function copyToClipboard(item) {
 
 function clipboardify(selector) {
     
-    items = document.querySelectorAll("#rec373642408 .tn-atom");
+    items = document.querySelectorAll(selector);
     items.forEach(function(item) {
         item.addEventListener('click', function(e){
           copyToClipboard(this)
