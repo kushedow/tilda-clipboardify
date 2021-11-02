@@ -5,15 +5,14 @@
  */
 function copyToClipboard(item) {
     
-  // Поскольку прямого апи дя копирования нет,
-  // мы сперва создадим инпут, 
-  // затем выделим текст
-  // затем вызовем команду "копировать"
+  // Поскольку прямого апи дя копирования нет, мы сперва создадим текстареа, 
+  // затем выделим текст, затем вызовем команду "копировать"
     
-  content = item.innerHTML // Получаем контент
-  var aux = document.createElement("input"); // Создаем и
+  content = item.innerText
+  content = content.replaceAll("➡", "    ") // Получаем контент
 
-  aux.setAttribute("value", content);
+  var aux = document.createElement("TEXTAREA"); // Создаем и
+  aux.value = content
   document.body.appendChild(aux);
   aux.select();
   document.execCommand("copy");
